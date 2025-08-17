@@ -21,21 +21,20 @@ for segment in segments:
 df = pd.DataFrame(data)
 
 # --- 2. Seaborn styling ---
-sns.set_style("whitegrid")  # professional white grid style
-sns.set_context("talk")     # presentation-ready text sizes
-palette = sns.color_palette("Set2")  # visually distinct colors
+sns.set_style("whitegrid")
+sns.set_context("talk")
+palette = sns.color_palette("Set2")
 
 # --- 3. Create the lineplot ---
-plt.figure(figsize=(8,8))  # 512x512 pixels
+# Directly set figure size in pixels: 512px / 100 dpi = 5.12 inches
+fig = plt.figure(figsize=(5.12, 5.12), dpi=100)  # exact 512x512 pixels
 ax = sns.lineplot(data=df, x='Month', y='Revenue', hue='Segment', marker='o', palette=palette)
 plt.title("Monthly Revenue Trend by Customer Segment", fontsize=16)
 plt.xlabel("Month", fontsize=12)
 plt.ylabel("Revenue ($)", fontsize=12)
 plt.xticks(rotation=45)
-plt.tight_layout()
 
-# --- 4. Save the chart ---
-plt.savefig('chart.png', dpi=64, bbox_inches='tight')  # 512x512 pixels
-plt.close()
+# --- 4. Save chart ---
+fig.savefig('chart.png', dpi=100)  # exact 512x512 pixels
+plt.close(fig)
 
-print("Chart generated and saved as chart.png")
