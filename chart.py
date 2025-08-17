@@ -35,6 +35,6 @@ plt.ylabel("Revenue ($)", fontsize=12)
 plt.xticks(rotation=45)
 
 # --- 4. Save chart ---
-fig.savefig('chart.png')  # exact 512x512 pixels
+fig.savefig('chart.png', dpi=64, bbox_inches='tight')  # exact 512x512 pixels
 plt.close(fig)
 
