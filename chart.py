@@ -27,7 +27,7 @@ palette = sns.color_palette("Set2")
 
 # --- 3. Create the lineplot ---
 # Directly set figure size in pixels: 512px / 100 dpi = 5.12 inches
-fig = plt.figure(figsize=(5.12, 5.12), dpi=100)  # exact 512x512 pixels
+fig = plt.figure(figsize=(8, 8))  # exact 512x512 pixels
 ax = sns.lineplot(data=df, x='Month', y='Revenue', hue='Segment', marker='o', palette=palette)
 plt.title("Monthly Revenue Trend by Customer Segment", fontsize=16)
 plt.xlabel("Month", fontsize=12)
